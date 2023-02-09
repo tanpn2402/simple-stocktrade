@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.chart canvas:nth-child(2) {
+    display: none;
+}
