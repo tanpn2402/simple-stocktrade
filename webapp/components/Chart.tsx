@@ -170,13 +170,15 @@ const Chart = (props : ReactNodeProps) => {
     series.appear(1000);
     chart.appear(1000, 100);
 
+    chartDiv.current!.style.height = "100%";
+
     return () => {
       root.dispose();
     };
   }, [chartDiv]);
 
   return (
-    <div className={classNames("rounded-box w-full shadow bg-white", props.className!)}>
+    <div className={classNames("flex flex-col rounded-box w-full shadow bg-white", props.className!)}>
       {/*  border-b-2 border-gray-300 */}
       <div className="mx-8 pt-8 pb-4 flex">
         <div className="grow">
@@ -185,11 +187,11 @@ const Chart = (props : ReactNodeProps) => {
         </div>
         <div className="text-right">
           <div className="grid grid-cols-2 gap-4 items-center">
-            <div className="badge badge-md pl-2 bg-rose-700 border-rose-700">
-              <span>-1,34%</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
+            <div className="flex items-center justify-center rounded px-2 bg-primary/[.1] color-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
               </svg>
+              <span className="font-semibold">1,34%</span>
             </div>
             <h2 className="text-2xl font-bold">$150,74</h2>
           </div>

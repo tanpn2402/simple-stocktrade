@@ -5,3 +5,13 @@
 .chart canvas:nth-child(2) {
     display: none;
 }
+
+.color-primary {
+    color: hsl(var(--p));
+}
+
+.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active) {
+    background-color: hsl(var(--bc) / var(--tw-bg-opacity));
+    --tw-bg-opacity: 0.05;
+    color: currentColor;
+}
